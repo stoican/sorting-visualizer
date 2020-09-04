@@ -1,6 +1,6 @@
 # SortingVisualizer
 
-A simple Angular app to visualize some popular sorting algorithms: Bubble Sort, Insertion Sort, Merge Sort. You can generate a random array, change the size of an array and sorting speed. Techologies used: JS/TS, HTML&CSS, Angular, Angular Material UI Library.
+A simple Angular app to visualize some popular sorting algorithms: Bubble Sort, Insertion Sort, Merge Sort. You can generate a random array, change the size and the sorting speed of an array. Techologies used: JS/TS, HTML&CSS, Angular, Angular Material UI Library.
 
 ## Development server
 
