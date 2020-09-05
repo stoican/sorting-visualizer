@@ -25,7 +25,6 @@
 }
 /* Change the default style of disabled buttons */
 ::ng-deep .mat-button-disabled {
-    color: white !important;
-    opacity: 65% !important;
-    cursor: not-allowed !important;
+    color: white!important;
+    cursor: not-allowed!important;
 }

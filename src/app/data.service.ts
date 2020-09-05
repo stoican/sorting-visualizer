@@ -5,11 +5,12 @@ import { Injectable } from '@angular/core';
 })
 export class DataService {
   array: number[]  = [];
-  ANIMATION_SPEED_MS = 35;
-  ARRAY_SIZE = 30;
+  ANIMATION_SPEED_MS = 25;
+  ARRAY_SIZE = 40;
   PRIMARY_COLOR = '#009688';
   SECONDARY_COLOR = '#ffd740';
-  finished = true;
+  isFinished = true;
+  isSorted = false;
 
   constructor() { }
 
@@ -26,22 +27,11 @@ export class DataService {
   } 
 
   buttonsStateSwitcher(speed: number, multiplier: number): void {
-    this.finished = false;
+    this.isFinished = false;
+    this.isSorted = true;
     setTimeout(()=> {
-      this.finished = true;
+      this.isFinished = true;
     }, speed * multiplier);
-  }
-
-  getFinished(): boolean {
-    return this.finished;
-  }
-
-  getSecondaryColor(): string {
-    return this.SECONDARY_COLOR;
-  }
-
-  getPrimaryColor(): string {
-    return this.PRIMARY_COLOR;
   }
 
   getArraySize(): number {
@@ -52,4 +42,23 @@ export class DataService {
     return this.ANIMATION_SPEED_MS;
   }
 
+  getPrimaryColor(): string {
+    return this.PRIMARY_COLOR;
+  }
+  
+  getSecondaryColor(): string {
+    return this.SECONDARY_COLOR;
+  }
+
+  getIsSorted(): boolean {
+    return this.isSorted;
+  }
+
+  setIsSorted(flag): void {
+    this.isSorted = flag;
+  }
+
+  getIsFinished(): boolean {
+    return this.isFinished;
+  }
 }

@@ -10,7 +10,7 @@ import { IAnimation } from '../interfaces';
   selector: 'app-visualizer',
   templateUrl: './visualizer.component.html',
   styleUrls: ['./visualizer.component.css']
-})
+})  
 export class VisualizerComponent implements OnInit {
   @ViewChild('container') container: ElementRef;
   array: number[] = [];
@@ -32,10 +32,12 @@ export class VisualizerComponent implements OnInit {
 
   create() {
       this.array = this.dataService.createArray(Math.floor(this.dataService.ARRAY_SIZE));
+      this.dataService.setIsSorted(false);
   }
 
   onRangeChange() {
     this.array = this.dataService.createArray(Math.floor(this.dataService.ARRAY_SIZE));
+    this.dataService.setIsSorted(false);
   }
 
   onSpeedChange(value) {

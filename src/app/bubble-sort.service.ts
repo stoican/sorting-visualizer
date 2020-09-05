@@ -33,7 +33,7 @@ export class BubbleSortService {
 
       }
 
-      if(swapped) {
+      if(!swapped) {
         break;
       }
     }

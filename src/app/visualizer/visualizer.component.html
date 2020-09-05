@@ -1,20 +1,31 @@
 <mat-toolbar color="primary" fxLayout.lt-md="column" fxLayout="row">
     <mat-toolbar-row>
-        <button mat-raised-button (click)="create()" [disabled]="!dataService.getFinished()">Generate Random Array</button>
+        <button mat-raised-button (click)="create()" [disabled]="!dataService.getIsFinished()">Generate Random Array</button>
     </mat-toolbar-row>
         <mat-toolbar-row>
             <div>
                 <label for="size-slider">Size</label>
-                <mat-slider id="size-slider" [(ngModel)]="dataService.ARRAY_SIZE" (change)="onRangeChange()" [min]="3" [max]="100" [disabled]="!dataService.getFinished()"> </mat-slider>
+                <mat-slider 
+                    id="size-slider"
+                    [(ngModel)]="dataService.ARRAY_SIZE" 
+                    (change)="onRangeChange()" 
+                    [min]="3" 
+                    [max]="100" 
+                    [disabled]="!dataService.getIsFinished()"> </mat-slider>
                 <label for="speed-slider">Speed</label>
-                <mat-slider id="speed-slider" (change)="onSpeedChange($event.value)" [value]="-1 * ANIMATION_SPEED_MS" [min]="-130" [max]="-3" [disabled]="!dataService.getFinished()"></mat-slider>
+                <mat-slider id="speed-slider" 
+                    (change)="onSpeedChange($event.value)" 
+                    [value]="-1 * ANIMATION_SPEED_MS" 
+                    [min]="-130" 
+                    [max]="-3" 
+                    [disabled]="!dataService.getIsFinished()"></mat-slider>
             </div>
         </mat-toolbar-row>
         <mat-toolbar-row>
             <div>
-                <button mat-button (click)="mergeSort()" [disabled]="!dataService.getFinished()">Merge Sort</button>
-                <button mat-button (click)="bubbleSort()" [disabled]="!dataService.getFinished()">Bubble Sort</button>
-                <button mat-button (click)="insertionSort()" [disabled]="!dataService.getFinished()">Insertion Sort</button>
+                <button mat-button (click)="mergeSort()" [disabled]="dataService.getIsSorted()">Merge Sort</button>
+                <button mat-button (click)="bubbleSort()" [disabled]="dataService.getIsSorted()">Bubble Sort</button>
+                <button mat-button (click)="insertionSort()" [disabled]="dataService.getIsSorted()">Insertion Sort</button>
             </div>
         </mat-toolbar-row>
 </mat-toolbar>
